@@ -19,6 +19,8 @@ mongoose.connect(config.database , err => {
 // Initialize the express
 const app = express();
 
+app.use(bodyParser.json());
+
 // PORT TO RUN THE SERVER
 const PORT = '3000';
 
@@ -26,7 +28,6 @@ const PORT = '3000';
 app.use('/' , route);
 
 
-app.use(bodyParser.json());
 
 
 app.listen(PORT , function(req,res){
